@@ -12,27 +12,26 @@ O sistema atua identificando padrões de lançamentos (únicos ou múltiplos), c
 
 O robô executa um ciclo contínuo (loop) seguindo este fluxograma lógico:
 
-INÍCIO DO CICLO
-  ├── 1. Filtra lançamentos pendentes na conta (variavel: CONTA_FORNECEDOR) e com o historico (variavel: HISTORICO_BUSCA)
-  ├── 2. Abre o detalhamento do lançamento (Captura valor e refiltra)
-  ├── 3. ANÁLISE DO GRID (Leitura comparativa):
-  │    ├── SE (Débito da Linha 1 != Débito da Linha 2):
-  │    │    # Cenário: Múltiplo (2 Lançamentos)
-  │    │    -> Identifica qual linha é o Fornecedor
-  │    │    -> Corrige para Conta Matriz (variavel: CONTA_MATRIZ)
-  │    │    -> Captura a Filial
-  │    │    -> Busca o Banco correspondente no Hash Map
-  │    │    -> Corrige a segunda linha com o Banco
-  │    │    -> Salva
-  │    │
-  │    └── SENÃO (Débitos iguais ou Linha 2 vazia):
-  │         # Cenário: Lançamento Único
-  │         -> Altera a conta de crédito para '1' (variavel: CAIXA_CONTA)
-  │         -> Salva
-  │
-  └── 4. Retorna ao filtro e repete
-FIM SE lista vazia
-
+INÍCIO DO CICLO  
+  ├── 1. Filtra lançamentos pendentes na conta (variavel: CONTA_FORNECEDOR) e com o historico (variavel: HISTORICO_BUSCA)  
+  ├── 2. Abre o detalhamento do lançamento (Captura valor e refiltra)  
+  ├── 3. ANÁLISE DO GRID (Leitura comparativa):  
+  │    ├── SE (Débito da Linha 1 != Débito da Linha 2):  
+  │    │    # Cenário: Múltiplo (2 Lançamentos)  
+  │    │    -> Identifica qual linha é o Fornecedor  
+  │    │    -> Corrige para Conta Matriz (variavel: CONTA_MATRIZ)  
+  │    │    -> Captura a Filial  
+  │    │    -> Busca o Banco correspondente no Hash Map  
+  │    │    -> Corrige a segunda linha com o Banco  
+  │    │    -> Salva  
+  │    │  
+  │    └── SENÃO (Débitos iguais ou Linha 2 vazia):  
+  │         # Cenário: Lançamento Único  
+  │         -> Altera a conta de crédito para '1' (variavel: CAIXA_CONTA)  
+  │         -> Salva  
+  │  
+  └── 4. Retorna ao filtro e repete  
+FIM SE lista vazia  
 
 ## Arquitetura e Soluções de Engenharia
 
@@ -98,6 +97,6 @@ O projeto é composto por dois módulos principais:
 7. **Para parar:** Mova o mouse bruscamente para o canto superior esquerdo da tela (Fail-Safe).
 
 
-Desenvolvido por Camila Azevedo
-Engenheira Eletricista & Mestranda em IA
-email: camila.azevedo.eng@gmail.com
+Desenvolvido por Camila Azevedo  
+Engenheira Eletricista & Mestranda em IA  
+email: camila.azevedo.eng@gmail.com  
