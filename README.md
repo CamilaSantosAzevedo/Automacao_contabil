@@ -98,5 +98,5 @@ O projeto é composto por dois módulos principais:
 
 
 Desenvolvido por Camila Azevedo  
-Engenheira Eletricista & Mestranda em IA  
+Engenheira Eletricista
 email: camila.azevedo.eng@gmail.com  
